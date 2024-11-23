@@ -1,0 +1,538 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.container .logo {
+  cursor: pointer;
+}
+
+.container .logo h1 {
+  color: #00ffee;
+  margin-left: 30px;
+  transition: 0.4s scale;
+  font-size: 38px;
+}
+
+.container .logo h1:hover {
+  transform: scale(1.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  padding-right: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom: 3px solid #00ffee;
+  color: #00ffee;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8%;
+  padding-top: 5vh;
+}
+
+.home-content h1 {
+  color: #00ffee;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 80px;
+}
+
+.home-content h3 {
+  color: #00ffee;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 55px;
+}
+
+.home-content p {
+  width: 500px;
+  height: 20px;
+  font-size: larger;
+  font-weight: 400;
+}
+
+.home-content .social a {
+  text-decoration: none;
+  color: #00ffee;
+  background-color: #000;
+  border-radius: 25px;
+  border: 2px solid #00ffee;
+  padding: 8px 10px;
+  font-size: larger;
+  transition: 0.5s ease-in;
+}
+
+.home-content .social a:hover {
+  box-shadow: 0 0 25px #00ffee;
+  transform: scale(1.3) translateX(-50px);
+  background-color: #00ffee;
+  color: #000;
+}
+
+.button-hc {
+  padding-top: 5vh;
+}
+
+.button-hc a {
+  text-decoration: none;
+  color: #000;
+  background: #00ffee;
+  border-radius: 25px;
+  padding: 8px 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.button-hc a:hover {
+  box-shadow: 0 0 25px #00ffee;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.text-animation span {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid #00ffee;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 4s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00ffee;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffee;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffee;
+}
+
+/* edu */ /* The actual timeline (the vertical ruler) */
+.edu h2 {
+  font-size: 90px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #00ffee;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.containers {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  transition: 4s scale;
+}
+.containers:hover {
+  transform: scale(1.1);
+}
+/* The circles on the timeline */
+.containers::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #00ffee;
+  box-shadow: 0 0 25px #00ffee;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  border-radius: 25px;
+  border: 2px solid #00ffee;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .containers {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .containers::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+/* skills */
+/* Skills Section */
+.skills {
+  padding: 50px 0;
+  background-color: #000;
+  color: var(--text-color);
+}
+
+.skills h2 {
+  font-size: 90px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.skill {
+  margin-bottom: 30px;
+}
+
+.skill h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.progress {
+  background-color: #333;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 25px;
+}
+.progress:hover {
+  box-shadow: 0 0 15px #00ffee;
+}
+.progress-bar {
+  height: 100%;
+  line-height: 25px;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.progress-bar.html {
+  background-color: #00ffee;
+} /* HTML color */
+.progress-bar.css {
+  background-color: #00ffee;
+} /* CSS color */
+.progress-bar.javascript {
+  background-color: #00ffee;
+} /* JavaScript color */
+.progress-bar.ppt {
+  background-color: #00ffee;
+} /* PPT color */
+.progress-bar.java {
+  background-color: #00ffee;
+} /* Java color */
+.progress-bar.c {
+  background-color: #00ffee;
+} /* C color */
+
+/* project */
+/* Projects Section */
+.projects {
+  padding: 50px 0;
+  background-color: #000;
+  color: var(--text-color);
+}
+
+.projects h2 {
+  font-size: 90px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.project-card {
+  background-color: #000;
+  border-radius: 25px;
+  border: 2px solid #00ffee;
+  box-shadow: 0 4px 8px #00ffee;
+  padding: 50px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.technologies span {
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.but a {
+  text-decoration: none;
+  color: #000;
+  border-radius: 25px;
+  padding: 8px 15px;
+  background-color: #00ffee;
+  top: 10px;
+}
+
+/* contact */
+/* Reset default margin and padding */
+
+header,
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 90px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  color: #00ffee;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-info,
+.contact-form {
+  background-color: #000;
+  border-radius: 25px;
+  border: 2px solid #00ffee;
+  padding: 20px;
+  margin-bottom: 20px;
+  flex-basis: 30%;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contact-info ul {
+  list-style-type: none;
+}
+
+.contact-info ul li {
+  margin-bottom: 10px;
+}
+
+.contact-info ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info ul li a:hover {
+  text-decoration: underline;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #00ffee;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 0 25px #00ffee;
+}
